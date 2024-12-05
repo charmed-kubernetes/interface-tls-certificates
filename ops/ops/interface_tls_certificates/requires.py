@@ -70,10 +70,10 @@ class CertificatesRequires(Object):
         try:
             self._data
         except ValidationError as ve:
-            log.error(f"{self.endpoint} relation data not yet valid. ({ve}")
+            log.warning(f"{self.endpoint} relation data not yet valid. ({ve}")
             return False
         if self._data is None:
-            log.error(f"{self.endpoint} relation data not yet available.")
+            log.warning(f"{self.endpoint} relation data not yet available.")
             return False
         return True
 
